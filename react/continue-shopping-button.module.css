@@ -1,0 +1,114 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  width: 100%;
+  justify-content: space-around;
+}
+.subcontainer{
+  display: none;
+  flex-direction: column;
+}
+.text{
+  color: black;
+}
+.text:active + .subcontainer, .subcontainer:active {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  background: white;
+  min-width: 100px;
+  width: auto;
+  z-index: 999;
+  padding: 20px 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.mobileArrow{
+display: none;
+}
+.mobileLable{
+width: 20px;
+  position: relative;
+}
+.mobileLable::before{
+  content: '';
+  width: 20px;
+  height: 20px;
+  top: 5px;
+  right: 5px;
+  position: absolute;
+  background: white;
+  border-radius: 10px;
+}
+.mobileLable::after{
+  top: 5px;
+  right: 5px;
+  content:'';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border:2px solid black;
+  transform: rotate(45deg);
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+}
+
+@media screen and (min-width: 768px) {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: black;
+    position: relative;
+  }
+
+  .subcontainer {
+    display: none;
+  }
+
+  .subcontainerSub .text {
+    color: red;
+  }
+
+  .text {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    font-size: 17px;
+    font-width: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+  }
+
+  .subcontainerSub {
+    display: none;
+  }
+  .link{
+    position: relative;
+  }
+
+  .link:hover + .subcontainerSub, .subcontainerSub:hover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    width: auto;
+    z-index: 999;
+    padding: 20px 10px;
+    border: 2px solid black;
+  }
+}
