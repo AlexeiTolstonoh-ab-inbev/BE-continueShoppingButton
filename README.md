@@ -1,2 +1,0 @@
-# BE-continueShoppingButton
-BE-continueShoppingButton
